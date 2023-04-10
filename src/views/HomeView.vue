@@ -1,5 +1,14 @@
 <template>
-  <div class="container">
-    <p class="h1">Home</p>
+  <div class="container py-4">
+    <SelectAtm></SelectAtm>
   </div>
 </template>
+<script>
+import SelectAtm from '@/components/SelectAtm.vue';
+
+export default {
+  components: {
+    SelectAtm,
+  },
+};
+</script>
