@@ -1,14 +1,17 @@
 <template>
   <div class="container py-4">
-    <SelectAtm></SelectAtm>
+    <CountryInfo></CountryInfo>
+    <AtmItem></AtmItem>
   </div>
 </template>
 <script>
-import SelectAtm from '@/components/SelectAtm.vue';
+import CountryInfo from '@/components/SelectArea.vue';
+import AtmItem from '@/components/AtmItem.vue';
 
 export default {
   components: {
-    SelectAtm,
+    CountryInfo,
+    AtmItem,
   },
 };
 </script>

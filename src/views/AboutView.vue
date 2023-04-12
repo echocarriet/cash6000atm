@@ -1,5 +1,17 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="container py-4">
+    <CountryInfo></CountryInfo>
+    <AtmItem></AtmItem>
   </div>
 </template>
+<script>
+import CountryInfo from '@/components/SelectArea.vue';
+import AtmItem from '@/components/AtmItem.vue';
+
+export default {
+  components: {
+    CountryInfo,
+    AtmItem,
+  },
+};
+</script>
