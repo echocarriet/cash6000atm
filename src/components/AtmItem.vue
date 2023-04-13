@@ -2,9 +2,9 @@
   <ul class="row g-3 list-unstyled">
     <li class="col-md-6" v-for="item in filterSearch" :key="item">
       <div class="card">
-        <h5 class="card-header">
+        <h3 class="card-header h5">
           {{ `${item.data.所屬銀行簡稱} | ${item.data.裝設地點}` }}
-        </h5>
+        </h3>
         <div class="card-body">
           <p class="card-text">
             <i class="bi bi-geo-alt-fill"></i>

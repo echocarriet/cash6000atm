@@ -49,6 +49,7 @@ export default {
       atmData: [], // 6000ATM.json
       atm6000Data: [], // 指定區域的ATM
       searchKey: '',
+      cityNameTw: '',
     };
   },
   methods: {
@@ -109,6 +110,11 @@ export default {
             .then((cityRes) => {
               // console.log(cityRes.data);
               this.townNameData = cityRes.data;
+              this.cityNameData.forEach((item) => {
+                if (this.$refs.selectCity.value === item.City) {
+                  this.cityNameTw = item.CityName;
+                }
+              });
             })
             .catch((err) => {
               console.log(err);
@@ -121,8 +127,10 @@ export default {
     renderTown() {
       this.$refs.selectTown.value = 'chooseTown';
       this.atm6000Data = [];
+      this.searchKey = '';
       this.getTown();
       this.emitter.emit('emit-render6000Atm', this.atm6000Data);
+      this.emitter.emit('emit-search', this.searchKey);
     },
     get6000Atm() {
       const api = `${process.env.VUE_APP_6000ATMAPI}`;
@@ -148,7 +156,8 @@ export default {
         } else if (item.服務型態 === '9') {
           openingHourStatus = '24 小時營業';
         }
-        if (this.$refs.selectTown.value === item.鄉鎮縣市別) {
+        if (this.$refs.selectTown.value === item.鄉鎮縣市別
+        && this.cityNameTw === item.所屬縣市) {
           const atmInfo = {
             data: item,
             mapURL: `https://www.google.com/maps/place/${item.座標Y軸},${item.座標X軸}`,
