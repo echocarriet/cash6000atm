@@ -1,11 +1,12 @@
 <template>
-  <div id="map"></div>
+  <div id="map" class="position-relative">
+  </div>
 </template>
 <script>
 import { toRaw } from 'vue';
 
 export default {
-  inject: ['emitter', 'L'],
+  inject: ['emitter', 'L', 'control'],
   data() {
     return {
       atm6000Data: [],
@@ -37,12 +38,14 @@ export default {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 20,
+        radius: 100,
       })
         .bindPopup('<b>您目前所在位置 ✌️</b>')
         .addTo(osm)
         .openPopup();
       this.osm = osm;
+      // leaflet 外掛 Leaflet.Locate
+      this.L.control.locate().addTo(toRaw(this.osm)).start();
     },
     clearMarkers() {
       // 清除地圖所有標記
@@ -70,8 +73,8 @@ export default {
             `<h3 class="h5">${item.data.所屬銀行簡稱} | ${item.data.裝設地點}</h3>
             <p>
               <i class="bi bi-geo-alt-fill"></i>
-              ${item.data.所屬縣市}${item.data.鄉鎮縣市別}${item.data.地址}
-              <a href="${item.mapURL}" target="_blank">導航</a>
+              ${item.data.所屬縣市}${item.data.鄉鎮縣市別}${item.data.地址}  | 
+              <a class="link-underline-light" href="${item.mapURL}" target="_blank">導航</a>
             </p>
             <p>
             <i class="bi bi-clock-fill"></i> ${item.openingHour}  
@@ -109,7 +112,8 @@ export default {
 </script>
 <style lang="scss">
 #map {
-  height: 500px;
+  // height: 500px;
+  height: 80vh;
 }
 
 </style>

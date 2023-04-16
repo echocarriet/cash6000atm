@@ -1,0 +1,18 @@
+.window-vh100 {
+  min-height: calc(100vh - 399px);
+}
+.bg {
+  &-layoutColor {
+    background-color: #f4f0e6;
+  }
+}
+// @media (min-width: 768px) {
+//   .window-vh100 {
+//     min-height: calc(100vh - 176px);
+//   }
+// }
+@include media-breakpoint-up(md) {
+  .window-vh100 {
+    min-height: calc(100vh - 271px);
+  }
+}
