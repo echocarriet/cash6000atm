@@ -20,7 +20,7 @@
     </li>
   </ul>
   <div v-else>
-    <p class="text-center text-muted">目前尚無資料，請先至上方選取縣市與區域</p>
+    <p class="text-center text-muted">目前尚無卡片式資料，請先至上方選取縣市與區域</p>
   </div>
 </template>
 <script>

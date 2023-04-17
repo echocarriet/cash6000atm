@@ -3,36 +3,47 @@
     <div class="container py-3">
       <HeaderTemplate></HeaderTemplate>
       <SelectArea></SelectArea>
-      <p class="text-muted text-end mb-0">✦ 請先選取縣市與區域</p>
+      <button class="btn btn-primary ms-auto d-block" @click="goAnchor('#goMap')">
+        <i class="bi bi-geo-fill"></i> 地圖
+      </button>
     </div>
   </div>
-  <div class="window-vh100 bg-layoutColor">
-    <div class="container py-5">
-      <h2 class="text-center mb-4">全民共享普發現金 ATM 資訊</h2>
+  <div class="bg-layoutColor py-5">
+    <div class="container">
+      <h2 class="h3 text-center mb-4">ATM 卡片資訊</h2>
       <AtmItem></AtmItem>
     </div>
   </div>
-  <router-link
-    to="/map"
-    class="btn btn-primary btn-sm fixed-bottom"
-    style="bottom: 42px; right: 20px; left: auto"
-  >
-    <i class="bi bi-geo-fill"></i> 地圖
-  </router-link>
+  <div class="bg-mapColor py-5">
+    <h2 class="h3 text-center mb-4" id="goMap">ATM 地圖資訊</h2>
+    <MapAtm></MapAtm>
+  </div>
   <FooterTemplate></FooterTemplate>
+  <TopButton></TopButton>
 </template>
 <script>
 import HeaderTemplate from '@/components/HeaderTemplate.vue';
 import SelectArea from '@/components/SelectArea.vue';
 import AtmItem from '@/components/AtmItem.vue';
+import MapAtm from '@/components/MapAtm.vue';
 import FooterTemplate from '@/components/FooterTemplate.vue';
+import TopButton from '@/components/TopButton.vue';
 
 export default {
   components: {
     HeaderTemplate,
     SelectArea,
     AtmItem,
+    MapAtm,
     FooterTemplate,
+    TopButton,
+  },
+  methods: {
+    goAnchor(selector) {
+      document.querySelector(selector).scrollIntoView({
+        behavior: 'smooth',
+      });
+    },
   },
 };
 </script>

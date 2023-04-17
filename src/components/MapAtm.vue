@@ -1,4 +1,6 @@
 <template>
+  <p class="text-muted text-center mb-2">✦ 請開啟定位並允許存取位置資訊</p>
+  <p class="text-muted text-center mb-4">可縮放地圖查看篩選後的區域 ATM，點擊黃色圖示可顯示 ATM 資訊</p>
   <div id="map" class="position-relative">
   </div>
 </template>
@@ -27,7 +29,7 @@ export default {
     // 2.建立 Leaflet 地圖
     leafletMap(lat, lon) {
       // 產生地圖
-      const osm = this.L.map('map').setView([lat, lon], 18);
+      const osm = this.L.map('map').setView([lat, lon], 15);
       // 從 Leaflet新增一個圖資的圖層加入到地圖上
       this.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -38,7 +40,7 @@ export default {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 100,
+        radius: 150,
       })
         .bindPopup('<b>您目前所在位置 ✌️</b>')
         .addTo(osm)

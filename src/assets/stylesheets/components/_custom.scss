@@ -3,16 +3,9 @@
 }
 .bg {
   &-layoutColor {
-    background-color: #f4f0e6;
+    background-color: #f8f6f0;
   }
-}
-// @media (min-width: 768px) {
-//   .window-vh100 {
-//     min-height: calc(100vh - 176px);
-//   }
-// }
-@include media-breakpoint-up(md) {
-  .window-vh100 {
-    min-height: calc(100vh - 271px);
+  &-mapColor {
+    background-color: #f4f0e6;
   }
 }
