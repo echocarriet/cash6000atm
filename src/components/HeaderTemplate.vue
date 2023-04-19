@@ -3,7 +3,7 @@
     <span class="text-end">全民共享</span>
     <img
       class="img-fluid mx-auto mb-4"
-      src="@/assets/logo.svg"
+      src="@/assets/stylesheets/images/logo.svg"
       alt="全民共享普發現金6000ATM"
       style="width: 100px"
     />
