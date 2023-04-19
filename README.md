@@ -1,24 +1,29 @@
-# cash9000atm
+# 全民共享普發現金 ATM 裝設地點地圖
 
-## Project setup
-```
-npm install
-```
+2023 年財政部因全民共享經濟成果，規劃了「 全民共享普發現金 6000 」，此專案針對「 ATM 領現 」方式進行開發，使用者可於站內查詢哪些地方的 ATM 可領取普發現金，並導航至那個地點。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+**站內提供兩種瀏覽方式：**
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- 卡片條列式
+- 地圖
 
-### Lints and fixes files
-```
-npm run lint
-```
+**網站使用方式：**
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 選取指定縣市與區域後，可再於搜尋欄位做篩選縮小範圍。
+- 地圖上，可點選左方 + -  圖示做縮放。
+- 地圖上，點擊 + - 圖示下方的箭頭按鈕，可回到使用者目前位置。
+- 地圖上，出現的黃色圖示為 ATM 位置，點擊後會顯示此 ATM 相關資訊。
+
+## 專案技術
+
+- Vue CLI V3.2.13
+- bootstrap V5.2
+- leaflet 地圖套件
+
+## API
+
+- [TDX 運輸資料流通服務：共通資料 - 行政區](https://tdx.transportdata.tw/)
+- 政府資料開放平臺：[全民共享普發現金ATM裝設地點明細](https://data.gov.tw/dataset/161441)
+
+## DEMO
+[線上觀看 DRMO](https://echocarrie.com/cash6000atm/#/)

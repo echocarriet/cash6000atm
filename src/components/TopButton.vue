@@ -1,5 +1,5 @@
 <template>
-  <button @click="scrollToTop" ref="topButton" class="app-button">
+  <button @click="scrollToTop" ref="topButton" class="topButton">
     <i class="bi bi-arrow-up text-primary h5"></i>
   </button>
 </template>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.app-button {
+.topButton {
   border-radius: 50%;
   height: 50px;
   width: 50px;

@@ -47,3 +47,13 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+  .bg {
+  &-layoutColor {
+    background-color: #f8f6f0;
+  }
+  &-mapColor {
+    background-color: #f4f0e6;
+  }
+}
+</style>
